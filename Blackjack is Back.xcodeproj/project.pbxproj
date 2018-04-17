@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA350967207640A80036DC7A /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350966207640A80036DC7A /* Deck.swift */; };
+		FA35096D207C5C620036DC7A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35096C207C5C620036DC7A /* Player.swift */; };
+		FA350971207D9ACC0036DC7A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350970207D9ACC0036DC7A /* Card.swift */; };
+		FA350973207F0F770036DC7A /* ButtonSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350972207F0F770036DC7A /* ButtonSprite.swift */; };
+		FA350975207F1B9D0036DC7A /* ButtonSpriteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350974207F1B9D0036DC7A /* ButtonSpriteDelegate.swift */; };
+		FA350977208034050036DC7A /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350976208034050036DC7A /* MenuScene.swift */; };
+		FA350979208034CD0036DC7A /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA350978208034CD0036DC7A /* MenuScene.sks */; };
 		FA6C51FC2075BF7600FEBCC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C51FB2075BF7600FEBCC3 /* AppDelegate.swift */; };
 		FA6C51FE2075BF7600FEBCC3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA6C51FD2075BF7600FEBCC3 /* GameScene.sks */; };
 		FA6C52002075BF7600FEBCC3 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA6C51FF2075BF7600FEBCC3 /* Actions.sks */; };
@@ -15,8 +22,15 @@
 		FA6C52072075BF7600FEBCC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6C52052075BF7600FEBCC3 /* Main.storyboard */; };
 		FA6C52092075BF7900FEBCC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6C52082075BF7900FEBCC3 /* Assets.xcassets */; };
 		FA6C520C2075BF7900FEBCC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6C520A2075BF7900FEBCC3 /* LaunchScreen.storyboard */; };
-		FA6C52172075BF7A00FEBCC3 /* Blackjack_is_BackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C52162075BF7A00FEBCC3 /* Blackjack_is_BackTests.swift */; };
 		FA6C52222075BF7A00FEBCC3 /* Blackjack_is_BackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C52212075BF7A00FEBCC3 /* Blackjack_is_BackUITests.swift */; };
+		FA6C52302075EEE000FEBCC3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C522F2075EEDF00FEBCC3 /* CardView.swift */; };
+		FA8176B2208431AF00E5415E /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8176B1208431AF00E5415E /* CardTests.swift */; };
+		FA8176B32084323E00E5415E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350970207D9ACC0036DC7A /* Card.swift */; };
+		FA8176B42084330800E5415E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C522F2075EEDF00FEBCC3 /* CardView.swift */; };
+		FA8176B52084330B00E5415E /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350966207640A80036DC7A /* Deck.swift */; };
+		FA8176B62084330F00E5415E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35096C207C5C620036DC7A /* Player.swift */; };
+		FA8176B82084335500E5415E /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8176B72084335500E5415E /* DeckTests.swift */; };
+		FA8176BA2084750A00E5415E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8176B92084750900E5415E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA350966207640A80036DC7A /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		FA35096C207C5C620036DC7A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		FA350970207D9ACC0036DC7A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		FA350972207F0F770036DC7A /* ButtonSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSprite.swift; sourceTree = "<group>"; };
+		FA350974207F1B9D0036DC7A /* ButtonSpriteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSpriteDelegate.swift; sourceTree = "<group>"; };
+		FA350976208034050036DC7A /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		FA350978208034CD0036DC7A /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		FA6C51F82075BF7600FEBCC3 /* Blackjack is Back.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blackjack is Back.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6C51FB2075BF7600FEBCC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA6C51FD2075BF7600FEBCC3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -48,11 +69,14 @@
 		FA6C520B2075BF7900FEBCC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA6C520D2075BF7900FEBCC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA6C52122075BF7A00FEBCC3 /* Blackjack is BackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blackjack is BackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA6C52162075BF7A00FEBCC3 /* Blackjack_is_BackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blackjack_is_BackTests.swift; sourceTree = "<group>"; };
 		FA6C52182075BF7A00FEBCC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA6C521D2075BF7A00FEBCC3 /* Blackjack is BackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blackjack is BackUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6C52212075BF7A00FEBCC3 /* Blackjack_is_BackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blackjack_is_BackUITests.swift; sourceTree = "<group>"; };
 		FA6C52232075BF7A00FEBCC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA6C522F2075EEDF00FEBCC3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FA8176B1208431AF00E5415E /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		FA8176B72084335500E5415E /* DeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
+		FA8176B92084750900E5415E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +136,15 @@
 				FA6C52082075BF7900FEBCC3 /* Assets.xcassets */,
 				FA6C520A2075BF7900FEBCC3 /* LaunchScreen.storyboard */,
 				FA6C520D2075BF7900FEBCC3 /* Info.plist */,
+				FA6C522F2075EEDF00FEBCC3 /* CardView.swift */,
+				FA350966207640A80036DC7A /* Deck.swift */,
+				FA35096C207C5C620036DC7A /* Player.swift */,
+				FA350970207D9ACC0036DC7A /* Card.swift */,
+				FA350972207F0F770036DC7A /* ButtonSprite.swift */,
+				FA350974207F1B9D0036DC7A /* ButtonSpriteDelegate.swift */,
+				FA350976208034050036DC7A /* MenuScene.swift */,
+				FA350978208034CD0036DC7A /* MenuScene.sks */,
+				FA8176B92084750900E5415E /* Constants.swift */,
 			);
 			path = "Blackjack is Back";
 			sourceTree = "<group>";
@@ -119,8 +152,9 @@
 		FA6C52152075BF7A00FEBCC3 /* Blackjack is BackTests */ = {
 			isa = PBXGroup;
 			children = (
-				FA6C52162075BF7A00FEBCC3 /* Blackjack_is_BackTests.swift */,
 				FA6C52182075BF7A00FEBCC3 /* Info.plist */,
+				FA8176B1208431AF00E5415E /* CardTests.swift */,
+				FA8176B72084335500E5415E /* DeckTests.swift */,
 			);
 			path = "Blackjack is BackTests";
 			sourceTree = "<group>";
@@ -239,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6C52072075BF7600FEBCC3 /* Main.storyboard in Resources */,
+				FA350979208034CD0036DC7A /* MenuScene.sks in Resources */,
 				FA6C51FE2075BF7600FEBCC3 /* GameScene.sks in Resources */,
 				FA6C52092075BF7900FEBCC3 /* Assets.xcassets in Resources */,
 				FA6C520C2075BF7900FEBCC3 /* LaunchScreen.storyboard in Resources */,
@@ -267,9 +302,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA350967207640A80036DC7A /* Deck.swift in Sources */,
+				FA8176BA2084750A00E5415E /* Constants.swift in Sources */,
 				FA6C52022075BF7600FEBCC3 /* GameScene.swift in Sources */,
+				FA350977208034050036DC7A /* MenuScene.swift in Sources */,
 				FA6C52042075BF7600FEBCC3 /* GameViewController.swift in Sources */,
 				FA6C51FC2075BF7600FEBCC3 /* AppDelegate.swift in Sources */,
+				FA35096D207C5C620036DC7A /* Player.swift in Sources */,
+				FA350975207F1B9D0036DC7A /* ButtonSpriteDelegate.swift in Sources */,
+				FA6C52302075EEE000FEBCC3 /* CardView.swift in Sources */,
+				FA350973207F0F770036DC7A /* ButtonSprite.swift in Sources */,
+				FA350971207D9ACC0036DC7A /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA6C52172075BF7A00FEBCC3 /* Blackjack_is_BackTests.swift in Sources */,
+				FA8176B32084323E00E5415E /* Card.swift in Sources */,
+				FA8176B52084330B00E5415E /* Deck.swift in Sources */,
+				FA8176B82084335500E5415E /* DeckTests.swift in Sources */,
+				FA8176B42084330800E5415E /* CardView.swift in Sources */,
+				FA8176B62084330F00E5415E /* Player.swift in Sources */,
+				FA8176B2208431AF00E5415E /* CardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

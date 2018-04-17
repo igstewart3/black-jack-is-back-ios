@@ -16,13 +16,19 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            // Load the SKScene
+            if let menuScene = SKScene(fileNamed: "MenuScene") {
+                
                 // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
+                menuScene.scaleMode = .aspectFill
+                
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    menuScene.size.width = self.view.bounds.width
+                    menuScene.size.height = self.view.bounds.height
+                }
                 
                 // Present the scene
-                view.presentScene(scene)
+                view.presentScene(menuScene)
             }
             
             view.ignoresSiblingOrder = true
@@ -37,11 +43,7 @@ class GameViewController: UIViewController {
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+        return .portrait
     }
 
     override func didReceiveMemoryWarning() {
