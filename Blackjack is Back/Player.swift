@@ -65,7 +65,7 @@ class Player {
         cardView.zPosition = currentZ
         currentZ += 10
         cardView.moveCard(x: currentX, y: startY, flip: flip, remove: false)
-        currentX += (cardView.size.width - C.Cards.NEXT_CARD_OFFSET)
+        currentX += (cardView.size.width + C.Cards.NEXT_CARD_OFFSET)
     }
     
     /**

@@ -28,12 +28,17 @@ class GameScene: SKScene, ButtonSpriteDelegate {
     let restartButton = ButtonSprite(text: C.Buttons.TEXT_RESTART, size: CGSize(width: C.Buttons.RESTART_WIDTH, height: C.Buttons.RESTART_HEIGHT), buttonType: .Full)
     let outcomeLabel = SKLabelNode(text: "")
     let cardDeckImage = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "CardDeck")), size: CGSize(width: (C.Cards.WIDTH + C.Deck.IMAGE_INCREASE), height: (C.Cards.HEIGHT + C.Deck.IMAGE_INCREASE)))
+    var backgroundImage : SKSpriteNode?
     
     override func didMove(to view: SKView) {
-
+        // Get positions
         let startX = 0 - self.size.width / 2 + (C.Cards.WIDTH / 2 + C.Cards.LAYOUT_OFFSET)
         let dealerStartY = self.size.height / 2 - (C.Cards.HEIGHT / 2 + C.Cards.LAYOUT_OFFSET)
         let userStartY = dealerStartY * -1
+        
+        // Setup background
+        backgroundImage = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "BoardBackground")), size: self.size)
+        addChild(backgroundImage!)
         
         user.xValue = startX
         user.yValue = userStartY

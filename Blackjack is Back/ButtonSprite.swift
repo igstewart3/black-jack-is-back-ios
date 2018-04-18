@@ -115,11 +115,11 @@ class ButtonSprite : SKSpriteNode {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if enabled {
             texture = baseTexture
-        }
-        for t in touches {
-            let location = t.location(in: self)
-            if location.x.magnitude < self.size.width / 2 && location.y.magnitude < self.size.height / 2 {
-                delegate?.buttonHit(sender: self)
+            for t in touches {
+                let location = t.location(in: self)
+                if location.x.magnitude < self.size.width / 2 && location.y.magnitude < self.size.height / 2 {
+                    delegate?.buttonHit(sender: self)
+                }
             }
         }
     }

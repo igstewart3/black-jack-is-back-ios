@@ -69,8 +69,8 @@ struct C {
         Constants for the card images.
     */
     struct Cards {
-        static let NEXT_CARD_OFFSET = CGFloat(20.0)
-        static let LAYOUT_OFFSET = CGFloat(20.0)
+        static let NEXT_CARD_OFFSET = CGFloat(10.0)
+        static let LAYOUT_OFFSET = CGFloat(40.0)
         static let WIDTH = CGFloat(120.0)
         static let HEIGHT = CGFloat(180.0)
     }

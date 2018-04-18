@@ -12,10 +12,12 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var gameView: SKView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = self.view as! SKView? {
+        if let view = self.gameView as SKView? {
             // Load the SKScene
             if let menuScene = SKScene(fileNamed: "MenuScene") {
                 
@@ -52,6 +54,6 @@ class GameViewController: UIViewController {
     }
 
     override var prefersStatusBarHidden: Bool {
-        return true
+        return false
     }
 }
