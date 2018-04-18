@@ -11,15 +11,23 @@ import GameplayKit
 
 class GameScene: SKScene, ButtonSpriteDelegate {
     
+    // Players
     private let user = Player(playerType: .User)
     private let dealer = Player(playerType: .Dealer)
+    
+    // Card Deck
     private let deck = Deck()
     
+    // Timer to pace dealer turn
+    var dealerTimer : Timer? = nil
+    
+    // Sprites for scene
     let hitButton = ButtonSprite(text: C.Buttons.TEXT_HIT, size: CGSize(width: C.Buttons.MAIN_WIDTH, height: C.Buttons.MAIN_HEIGHT), buttonType: .Right)
     let stayButton = ButtonSprite(text: C.Buttons.TEXT_STAY, size: CGSize(width: C.Buttons.MAIN_WIDTH, height: C.Buttons.MAIN_HEIGHT), buttonType: .Left)
     let outcomeDisplay = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "OutcomeDisplay")))
     let restartButton = ButtonSprite(text: C.Buttons.TEXT_RESTART, size: CGSize(width: C.Buttons.RESTART_WIDTH, height: C.Buttons.RESTART_HEIGHT), buttonType: .Full)
     let outcomeLabel = SKLabelNode(text: "")
+    let cardDeckImage = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "CardDeck")), size: CGSize(width: (C.Cards.WIDTH + C.Deck.IMAGE_INCREASE), height: (C.Cards.HEIGHT + C.Deck.IMAGE_INCREASE)))
     
     override func didMove(to view: SKView) {
 
@@ -33,11 +41,7 @@ class GameScene: SKScene, ButtonSpriteDelegate {
         dealer.xValue = startX
         dealer.yValue = dealerStartY
         
-        let cardDeckImage = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "CardDeck")))
-        var deckImageSize = cardDeckImage.size
-        deckImageSize.width = C.Cards.WIDTH + C.Deck.IMAGE_INCREASE
-        deckImageSize.height = C.Cards.HEIGHT + C.Deck.IMAGE_INCREASE
-        cardDeckImage.size = deckImageSize
+        // Setup card deck image
         cardDeckImage.zPosition = 5
         addChild(cardDeckImage)
         
@@ -142,7 +146,7 @@ class GameScene: SKScene, ButtonSpriteDelegate {
         if sender == hitButton {
             hit()
         } else if sender == stayButton {
-            stay(bust: false)
+            stay()
         } else if sender == restartButton {
             restart()
         }
@@ -156,7 +160,7 @@ class GameScene: SKScene, ButtonSpriteDelegate {
         addChild(userCard)
         user.addCard(cardView: userCard)
         if user.handTotal() > C.BlackJack.BLACK_JACK {
-            stay(bust: true)
+            stay()
         }
     }
     
@@ -166,9 +170,9 @@ class GameScene: SKScene, ButtonSpriteDelegate {
         - Parameters:
             - bust: True if the user is bust, otherwise false.
     */
-    func stay(bust : Bool) {
+    func stay() {
         setButtonsEnabled(enabled: false)
-        dealerTurn(playOutHand: !bust)
+        dealerPlay()
     }
     
     /**
@@ -183,25 +187,34 @@ class GameScene: SKScene, ButtonSpriteDelegate {
     }
     
     /**
-        Work through the dealers turn until he is either bust or >= 17.
+        Play out the dealer's turn.
     */
-    func dealerTurn(playOutHand : Bool) {
+    func dealerPlay() {
         // Show dealer's hidden card
         if let firstCard = dealer.cards[0] as CardView? {
             firstCard.flip()
         }
         
+        // Start timer to handle dealer cards
+        dealerTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(dealerTurn), userInfo: nil, repeats: true)
+    }
+    
+    /**
+        Work through the dealers turn until he is either bust or >= 17.
+    */
+    @objc func dealerTurn() {
         // Add cards to hand until either bust or 17 is reached
-        if playOutHand {
-            while dealer.handTotal() < C.BlackJack.DEALER_CUTOFF {
-                let dealerCard = deck.nextCard()
-                addChild(dealerCard)
-                dealer.addCard(cardView: dealerCard)
+        if dealer.handTotal() >= C.BlackJack.DEALER_CUTOFF || user.handTotal() > C.BlackJack.BLACK_JACK {
+            if dealerTimer != nil {
+                dealerTimer?.invalidate()
+                dealerTimer = nil
+                endGame()
             }
+        } else {
+            let dealerCard = deck.nextCard()
+            addChild(dealerCard)
+            dealer.addCard(cardView: dealerCard)
         }
-        
-        // End the game, display the result
-        endGame()
     }
     
     /**
